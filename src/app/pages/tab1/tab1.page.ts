@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 import { DeseosService } from 'src/app/services/deseos.service';
-import { Lista } from 'src/app/models/lista.model';
+// import { Lista } from 'src/app/models/lista.model';
 
 @Component({
   selector: 'app-tab1',
@@ -11,12 +11,12 @@ import { Lista } from 'src/app/models/lista.model';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  listas : Lista [] = [];
+  // listas : Lista [] = [];
   constructor(  public deseosService : DeseosService,
                 private router : Router,
                 private alertController : AlertController) {
 
-    this.listas = deseosService.listas;
+    // this.listas = deseosService.listas;
   }
 
   async agregarLista() {
@@ -44,4 +44,9 @@ export class Tab1Page {
     alert.present()
 
   }
+
+  // listaSeleccionada( lista : Lista ) {
+  //   this.router.navigateByUrl(`/tabs/tab1/agregar/${ lista.id }`);
+  // }
+
 }
