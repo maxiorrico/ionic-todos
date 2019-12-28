@@ -20,7 +20,6 @@ export class Tab1Page {
   }
 
   async agregarLista() {
-    // this.router.navigateByUrl('/tabs/tab1/agregar');
 
     const alert = await this.alertController.create({
       header: 'Nueva lista',
@@ -36,7 +35,8 @@ export class Tab1Page {
         // role : 'cancel',
         handler : (data) => {
           console.log(data);
-          this.deseosService.crearLista( data.titulo );
+          const listaId = this.deseosService.crearLista( data.titulo );
+          this.router.navigateByUrl(`/tabs/tab1/agregar/${ listaId }`);
         }
       }]
     });
